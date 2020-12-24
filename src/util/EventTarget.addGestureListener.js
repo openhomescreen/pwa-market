@@ -12,6 +12,8 @@ export const GESTURES = Object.freeze({
   SWIPE_LEFT: 'swipe-left',
   SWIPE_DOWN_LEFT: 'swipe-down-left',
   SWIPE_DOWN_RIGHT: 'swipe-down-right',
+  SWIPE_UP_LEFT: 'swipe-up-left',
+  SWIPE_UP_RIGHT: 'swipe-up-right',
   DRAW_X: 'draw-x',
 })
 
@@ -83,9 +85,9 @@ const touchend = function(e) {
   
   // general direction of swipe
   if (dY === 0 || Math.abs(dX / dY) > 1) {
-    if(watchDiagonals && Math.abs(dX / dY) < 2) {
+    if(dY != 0 && watchDiagonals && Math.abs(dX / dY) < 2) {
       //diagonal
-      gesture = dX > 0 ? GESTURES.SWIPE_DOWN_RIGHT : GESTURES.SWIPE_DOWN_LEFT
+      gesture = dX > 0 ? (dY > 0 ? GESTURES.SWIPE_UP_RIGHT : GESTURES.SWIPE_DOWN_RIGHT) : (dY > 0 ? GESTURES.SWIPE_UP_LEFT : GESTURES.SWIPE_DOWN_LEFT)
     } else {
       // horizontal
       gesture = dX > 0 ? GESTURES.SWIPE_RIGHT : GESTURES.SWIPE_LEFT
@@ -94,7 +96,7 @@ const touchend = function(e) {
   } else { 
     if(watchDiagonals && Math.abs(dX / dY) > .75) {
       //diagonal
-      gesture = dX > 0 ? GESTURES.SWIPE_DOWN_RIGHT : GESTURES.SWIPE_DOWN_LEFT
+      gesture = dX > 0 ? (dY > 0 ? GESTURES.SWIPE_UP_RIGHT : GESTURES.SWIPE_DOWN_RIGHT) : (dY > 0 ? GESTURES.SWIPE_UP_LEFT : GESTURES.SWIPE_DOWN_LEFT)
     } else {
       // vertical
       gesture = dY > 0 ? GESTURES.SWIPE_DOWN : GESTURES.SWIPE_UP
@@ -103,8 +105,10 @@ const touchend = function(e) {
 
   if(watchComplexGestures) {
     if(lastGesture) {
-      if(lastGesture == GESTURES.SWIPE_DOWN_LEFT && gesture == GESTURES.SWIPE_DOWN_RIGHT
-        || lastGesture == GESTURES.SWIPE_DOWN_RIGHT && gesture == GESTURES.SWIPE_DOWN_LEFT)
+      if(
+        ((lastGesture == GESTURES.SWIPE_DOWN_LEFT || lastGesture == GESTURES.SWIPE_UP_RIGHT) && (gesture == GESTURES.SWIPE_DOWN_RIGHT || gesture == GESTURES.SWIPE_UP_LEFT))
+        || ((lastGesture == GESTURES.SWIPE_DOWN_RIGHT || lastGesture == GESTURES.SWIPE_UP_LEFT) && (gesture == GESTURES.SWIPE_DOWN_LEFT || gesture == GESTURES.SWIPE_UP_RIGHT))
+      )
         gesture = GESTURES.DRAW_X
     }
     lastGesture = gesture
