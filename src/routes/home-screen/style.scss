@@ -1,0 +1,12 @@
+.homescreen {
+  padding-top:1em;
+  display: flex;
+  // justify-content: center;
+  flex-wrap: wrap;
+  background: linear-gradient(#000, transparent 20%), url('/assets/inky_splat.jpg') center center / cover;
+  height: 100%;
+  align-items: flex-start;
+  align-content: flex-start;
+  user-select: none;
+  // overflow: hidden;
+}

@@ -1,0 +1,32 @@
+{
+  "name": "PWA Market",
+  "short_name": "PWAs",
+  "start_url": "/",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "background_color": "#f00",
+  "theme_color": "#1da1f2",
+  "icons": [
+    {
+      "src": "/assets/icons/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/icons/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "shortcuts" : [
+    {
+      "name": "App Store",
+      "url": "/store",
+      "description": "Browse the worlds most free and open app store"
+    },
+    {
+      "name": "Settings",
+      "url": "/settings"
+    }
+  ]
+}

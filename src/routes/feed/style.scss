@@ -1,0 +1,18 @@
+.feed {
+	.endcap {
+		padding: 3vh 0;
+		color: #888;
+		text-align: center;
+		font-family: Arial Rounded MT Bold, Arial Rounded Bold, Helvetica Rounded, Arial, sans-serif;
+		p:last-child {
+			font-size: 2.5em;
+			svg {
+				font-size: 2em;
+				vertical-align: middle;
+			}
+			sup, sub {
+				font-size: .5em;
+			}
+		}
+	}
+}

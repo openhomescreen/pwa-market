@@ -1,0 +1,51 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background: #000;
+	font-family: 'Helvetica Neue', arial, sans-serif;
+	font-size: 1vw;
+	font-weight: 400;
+	color: #fcfcfc;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	// padding: 0 3vw 0;
+	overflow: hidden;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+#app {
+	overflow-y: scroll;
+	// overflow: hidden;
+	height: 100%;
+	font-size: calc(1em + 11px);
+	width: 100%;
+	// padding-top: 8vh; // leave room for header
+	// padding-bottom: calc( 2.5em + 3vh);
+	&.fix {
+		position: fixed;
+		overflow: hidden;
+		// padding-right: 12px;
+	}
+	// h1 { // this is intended to be the page header, only once per route, showing at the top of the page
+	// 	text-align: center;
+	// 	font-size: 1em;
+	// 	font-weight: 500;
+	// 	padding: 2vh 0 1vh;
+	// 	margin: 0;
+	// 	position:fixed;
+	// 	top: 0;
+	// 	left: 0;
+	// 	width: 100%;
+	// 	background: rgba(0,0,0,0.5);
+	// 	backdrop-filter: blur(15px);
+	// 	z-index: 10;
+	// }
+}
