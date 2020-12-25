@@ -50,7 +50,7 @@
       pointer-events: none;
       border: 1px solid rgba(15,15,15,0.05);
       box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-      transition: opacity 500ms ease-in 500ms;
+      transition: opacity 250ms linear;
       > svg {
         pointer-events: none;
         position: absolute;
@@ -98,6 +98,7 @@
           transition: opacity 500ms ease-out 500ms;
         }
         > .close {
+          transition: opacity 500ms ease-in 500ms;
           opacity: 1;
           pointer-events: auto;
         }
