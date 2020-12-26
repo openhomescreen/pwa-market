@@ -85,17 +85,15 @@ export class GestureListener {
    * updates the end point of the touch interaction
    */
   touchmove = (e) => {
-    this.position.final.x = e.touches[0].screenX
-    this.position.final.y = e.touches[0].screenY
+    this.position.final.x = e.touches[0].clientX
+    this.position.final.y = e.touches[0].clientY
     // console.log('touchmove', 'continuous: '+continuous, JSON.stringify(this.position.final))
 
     if(this.continuous) {
       this.listener({
         target: this.target,
         type: 'in-motion',
-        screenPosition: {
-          initial: this.position.initial
-        },
+        screenPosition: this.position,
         movementX: this.position.final.x - this.position.initial.x,
         movementY: this.position.final.y - this.position.initial.y,
       })
