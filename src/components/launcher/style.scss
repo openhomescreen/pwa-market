@@ -4,6 +4,13 @@
   // font-size: 5em;
   position: relative;
   margin-bottom: 1em;
+  &.system {
+    > .geometry {
+      > .close {
+        left: calc(100% - 2em);
+      }
+    }
+  }
   > .geometry {
     // color: #555;
     border-radius: 1em;
@@ -13,17 +20,34 @@
     height: 70%;
     margin: 15%;
     cursor: pointer;
-
+    > .childWrapper {
+      // position:absolute;
+      // transform: scale(0.17);
+      // opacity: 0;
+      // pointer-events: none;
+      animation-name: grow;
+      animation-duration: 500ms;
+      animation-timing-function: linear;
+    }
     > svg {
       color: #ddd;
       // filter: invert(1);
-      mix-blend-mode: difference;
+      // mix-blend-mode: difference;
       position: absolute;
       top: 50%;
       left: 50%;
       font-size: 2.5em;
       transform: translate(-50%, -50%);
       pointer-events: none;
+      filter: drop-shadow(0 0 .05em #000);
+    }
+    > img.icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      width: 70%;
     }
     > iframe {
       pointer-events: none;
@@ -64,23 +88,31 @@
 
   > .title {
     text-align: center;
-    color: #ddd;
+    color: #fff;
     // filter: invert(1);
-    mix-blend-mode: hard-light;
+    // mix-blend-mode: difference;
     position: absolute;
     width: 100%;
     text-align: center;
     bottom: -.5em;
     font-size: .8em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 600;
+    text-shadow: 0 0 .1em #000;
   }
 
   &.animating {
     > .geometry {
       transition: all 400ms ease-out;
 
-      > svg {
+      > svg, > img.icon {
         transition: all 400ms ease-in-out;
       }
+      // > .childWrapper {
+      //   transition: all 2s linear;
+      // }
     }
 
     > .title {
@@ -89,8 +121,18 @@
   }
   &.launched {
     &.loaded {
+      &.system {
+        > .geometry {
+          > svg {
+            opacity: 0.05;
+          }
+          > .close {
+            transition: opacity 500ms ease-in;
+          }
+        }
+      }
       > .geometry {
-        > svg {
+        > svg, > img.icon {
           opacity: 0;
         }
         > iframe {
@@ -102,6 +144,15 @@
           transition: opacity 500ms ease-in 500ms;
           opacity: 1;
           pointer-events: auto;
+        }
+      }
+    }
+    &.system {
+      > .geometry {
+        background-color: #000;
+        > svg {
+          font-size: 14em;
+          opacity: 0.1;
         }
       }
     }
@@ -118,7 +169,11 @@
       background-color: rgba(63,63,63,0.75);
       backdrop-filter: blur(10px);
       cursor: default;
-
+      // > .childWrapper {
+      //   transform: scale(1);
+      //   opacity: 1;
+      //   pointer-events: auto;
+      // }
       > svg {
         // transition: all 400ms ease-in-out;
         color: #eee;
@@ -131,5 +186,16 @@
       // transition: opacity 100ms linear;
       opacity: 0;
     }
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(.17);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }

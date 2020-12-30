@@ -1,6 +1,6 @@
 html, body {
-	height: 100%;
-	width: 100%;
+	height: 100vh;
+	width: 100vw;
 	padding: 0;
 	margin: 0;
 	background: #000;
@@ -33,6 +33,22 @@ body {
 		position: fixed;
 		overflow: hidden;
 		// padding-right: 12px;
+	}
+	h1 {
+		font-size: 2.5em;
+		font-weight: 500;
+		padding: 0 4vw;
+		margin: .5em 0;
+		// text-align: center;
+		// position: relative;
+		// > a {
+		// 	position: absolute;
+		// 	left: 3vw;
+		// 	top: 50%;
+		// 	transform: translateY(-50%);
+		// 	color: inherit;
+		// 	font-size: .75em;
+		// }
 	}
 	// h1 { // this is intended to be the page header, only once per route, showing at the top of the page
 	// 	text-align: center;

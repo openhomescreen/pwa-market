@@ -1,0 +1,52 @@
+.settings {
+  ul {
+    list-style-type: none;
+    margin: 0.5em 0;
+    padding:0;
+    li {
+      font-size: 1.2em;
+      background: #1c1c1c;
+      border-bottom: 1px solid #333;
+      padding: 0.35em 4vw;
+      cursor: pointer;
+      &:hover, &:active {
+        &:not(.expanded) {
+          background: #333;
+        }
+      }
+      > span {
+        background: #09f;
+        margin-right: .5em;
+        height: 1.25em;
+        width: 1.25em;
+        border-radius: .25em;
+        transform: translateY(.1em);
+      }
+      > .itemCompartment {
+        max-height: 0;
+        transition: max-height 250ms ease-in-out;
+        overflow: hidden;
+        ul {
+          margin-bottom: 0;
+          li {
+            font-size: 0.9em;
+            border-top: 1px solid #333;
+            border-bottom: 0;
+            border-radius: 0.25em;
+            > label {
+              cursor: pointer;
+            }
+            > input {
+              display: none;
+            }
+          }
+        }
+      }
+      &.expanded {
+        > .itemCompartment {
+          max-height: 3em;
+        }
+      }
+    }
+  }
+}

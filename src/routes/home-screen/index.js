@@ -1,42 +1,21 @@
 import { createRef, h } from 'preact';
+import { useState } from 'preact/hooks';
 // import { GESTURES } from '../../util/EventTarget.addGestureListener'
 import Launcher from '../../components/launcher';
+import Settings from '../settings';
 // import { useEffect } from 'preact/hooks';
 
 import style from './style';
 
 const HomeScreen = (props) => {
-	// const screen = createRef();
 
-	// useEffect(() => {
-	// 	// alert('works')
-	// 	screen.current.addGestureListener(GESTURES.DRAW_X, (e) => {
-  //     if(e.type == 'in-motion') {
-  //       // contentBox is the parent of gestureBox
-  //       // console.log(e.movementY)
-  //       // e.target.parentElement.style.transform = 'translateY('+(Math.max(0, e.movementY)*1.5)+'px)';
-  //       // e.target.parentElement.style['transition-property'] = 'none';
-  //       // let css = e.target.parentElement.style.cssText
-  //       // console.log(css);
-  //       // e.target.parentElement.style.cssText = css.replace(/top:.*px(\s!important)?;/,'top:'+Math.round(Math.max(0, e.movementY)*1.5+(window.innerHeight/10))+'px !important;');
-  //     } else {
-	// 			alert(JSON.stringify(e))
-				
-  //     }
-  //   }, {
-  //     minSwipeDistance: 40,
-  //     // continuous: true,
-  //   })
-	// }, [])
-
+	const [wallpaperURL, setWallpaper] = useState(undefined)
 	return (
-		<div class={style.homescreen}
-			// ref={screen}
-		>
+		<div class={style.homescreen} style={wallpaperURL?`--bgurl: url(${wallpaperURL});`:''}>
 			<Launcher icon='store' title='App Store'/>
 			<Launcher/>
 			<Launcher/>
-			<Launcher icon='cogs' title='Settings'/>
+			<Launcher icon='cogs' title='Settings' systemLauncher><Settings setWallpaper={setWallpaper} /></Launcher>
 			<Launcher icon='male' title='Hangapp' src='https://kylesureline.com/hangapp/#/'/>
 			<Launcher icon='hotel' title='Tower Game' src='https://towergame.app'/>
 			<Launcher icon='cube' title='The Cube' src='https://bsehovac.github.io/the-cube/'/>
