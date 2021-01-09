@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import style from './style';
 import { useState } from 'preact/hooks';
 
-const Settings = (props) => {
+const Store = (props) => {
 
   const [expanded, setExpanded] = useState(false)
 
@@ -32,8 +32,8 @@ const Settings = (props) => {
   }
 
 	return (
-		<div class={style.settings}>
-			<h1>Settings</h1>
+		<div class={style.Store}>
+			<h1>Store</h1>
       <ul>
         <li className={expanded?style.expanded:''} onClick={()=>{setExpanded((prevExpanded) => !prevExpanded)}}>
           <span className='fa-layers fa-fw'>
@@ -57,4 +57,4 @@ const Settings = (props) => {
 	);
 }
 
-export default Settings;
+export default Store;

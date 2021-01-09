@@ -1,6 +1,6 @@
 .homescreen {
   --bgurl: url('/assets/inky_splat.jpg');
-  padding-top: 5vh;
+  padding-top: env(safe-area-inset-top);
   display: flex;
   // justify-content: center;
   flex-wrap: wrap;
