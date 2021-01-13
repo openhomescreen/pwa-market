@@ -1,0 +1,42 @@
+{
+  "name": "The Circle",
+  "short_name": "The Circle",
+  "icons": [
+    {
+      "src": "img/ico48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "img/ico72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "img/ico96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "img/ico144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "img/ico192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "img/ico512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#64F97D",
+  "description": "Simple but Challenging Circle Game.",
+  "display": "standalone",
+  "orientation":"portrait",
+  "start_url": "."
+}
