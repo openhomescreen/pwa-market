@@ -4,7 +4,7 @@ gorun:
 
 .PHONY: install
 install:
-	npm run install
+	npm install
 
 .PHONY: start
 start:
