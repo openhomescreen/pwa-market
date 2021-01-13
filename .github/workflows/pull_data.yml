@@ -1,0 +1,26 @@
+name: data-puller
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  data_pull:
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+
+      - uses: actions/setup-go@v2
+        with:
+          go-version: "1.15"
+
+      - run: make gorun
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: automatically updating data files
