@@ -26,9 +26,6 @@ export default {
 	webpack(config, env, helpers, options) {
 		/** you can change the config here **/
 
-		let publicPath = process.env.PUBLIC_PATH || "/";
-		config.output.publicPath = publicPath;
-
     // modify the hashing method for css selector obfuscation
 		config.module.rules[4].use[1].options.modules.localIdentName = '[sha1:hash:hex:4]';
 

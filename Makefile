@@ -13,4 +13,4 @@ start:
 .PHONY: build
 build:
 	make install
-	env PUBLIC_PATH="/pwa-market/" npm run build
+	npm run build
