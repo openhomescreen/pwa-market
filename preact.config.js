@@ -1,4 +1,3 @@
-
 export default {
 	// you can add preact-cli plugins here
 	// plugins: [
@@ -26,32 +25,35 @@ export default {
 	 **/
 	webpack(config, env, helpers, options) {
 		/** you can change the config here **/
-		
+
+		let publicPath = process.env.PUBLIC_PATH || "/";
+		config.output.publicPath = publicPath;
+
     // modify the hashing method for css selector obfuscation
 		config.module.rules[4].use[1].options.modules.localIdentName = '[sha1:hash:hex:4]';
-		
+
 		// add proxy to go backend
 		// config.devServer.proxy = [
 		// 	{
 		// 		// proxy requests matching a pattern:
 		// 		path: '/api/**',
-	
+
 		// 		// where to proxy to:
 		// 		target: 'http://localhost:9000',
-	
+
 		// 		// optionally change Origin: and Host: headers to match target:
 		// 		changeOrigin: true,
 		// 		changeHost: true,
-	
+
 		// 		// optionally mutate request before proxying:
 		// 		pathRewrite: function(path, req) {
 		// 			// you can modify the outbound proxy request here:
 		// 			delete req.headers.referer;
-	
+
 		// 			// common: remove first path segment: (/api/**)
 		// 			return '/' + path.replace(/^\/[^\/]+\//, '');
 		// 		},
-	
+
 		// 		// optionally mutate proxy response:
 		// 		onProxyRes: function(proxyRes, req, res) {
 		// 			// you can modify the response here:
