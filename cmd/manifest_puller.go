@@ -88,7 +88,7 @@ func fetchManifestFile(app App, manifestsDir string, wg *sync.WaitGroup) {
 }
 
 func main() {
-	assetsDir := "./src/assets/data"
+	assetsDir := "./data"
 	manifestsDir := filepath.Join(assetsDir, "manifests")
 	manifestDirGlob := filepath.Join(manifestsDir, "*.json")
 	appsFilepath := filepath.Join(assetsDir, "apps.json")

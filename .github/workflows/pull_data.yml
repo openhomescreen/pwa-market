@@ -1,10 +1,16 @@
-name: data-puller
+name: Pull Manifest Files
 
 on:
   pull_request:
+    paths:
+      - "data/apps.json"
   push:
     branches:
       - main
+    paths:
+      - "data/apps.json"
+  schedule:
+    - cron: 0 2 * * *
 
 jobs:
   data_pull:
