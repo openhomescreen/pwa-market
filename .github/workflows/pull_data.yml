@@ -11,16 +11,20 @@ jobs:
     runs-on: "ubuntu-latest"
 
     steps:
-      - uses: actions/checkout@v2
+      - name: checkout code
+        uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
 
-      - uses: actions/setup-go@v2
+      - name: setup golang
+        uses: actions/setup-go@v2
         with:
           go-version: "1.15"
 
-      - run: make gorun
+      - name: run golang script
+        run: make gorun
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - name: commit files to repo
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: automatically updating data files
