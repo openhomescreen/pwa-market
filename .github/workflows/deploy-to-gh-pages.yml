@@ -5,12 +5,14 @@ on:
     paths-ignore:
       - "data/**"
       - "cmd/*.go"
+      - "README.md"
   push:
     branches:
       - main
     paths-ignore:
       - "data/**"
       - "cmd/*.go"
+      - "README.md"
 
 jobs:
   deploy_gh_pages:
