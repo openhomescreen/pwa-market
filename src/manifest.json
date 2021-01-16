@@ -1,6 +1,6 @@
 {
-  "name": "PWA Market",
-  "short_name": "PWAs",
+  "name": "Open Homescreen",
+  "short_name": "Open Homescreen",
   "start_url": "/",
   "display": "fullscreen",
   "orientation": "portrait",

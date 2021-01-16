@@ -5,6 +5,7 @@ import style from './style'
 import { useEffect, useRef, useState } from 'preact/hooks'
 import { GESTURES, GestureListener } from '../../util/gestureListener'
 import { Settings } from '../../routes/settings'
+import { getManifest } from '../../util/dbHelpers'
 
 const Launcher = (props) => {
 
@@ -26,14 +27,8 @@ const Launcher = (props) => {
   const appSpace = useRef()
   const closeBtn = useRef()
 
-  //ensure a trailing slash on props.src
-  if(props.src && !props.src.match(/\/$/)) {
-    props.src += '/'
-  }
-
   useEffect(() => {
     if(state.launched) {
-      console.log('APP SPACE LISTENER');
       let appSpaceListener = new GestureListener(appSpace.current, GESTURES.DRAW_X, (e) => {
         close(e)
       }, {
@@ -46,7 +41,6 @@ const Launcher = (props) => {
 
   useEffect(() => {
     if(state.launched) {
-      console.log('CLOSE BTN LISTENER');
       let closeBtnListener = new GestureListener(closeBtn.current, GESTURES.ANY, (e) => {
         e.target.style.top = '-1.5em'
         e.target.style.left = '-1.5em'
@@ -63,41 +57,53 @@ const Launcher = (props) => {
   // reach out to the app server to read its pwa manifest
   useEffect(() => {
     if(props.src) {
-      fetch(props.src+'manifest.json', {
-          // fetch('/api/v1/pwa/<id>/manifest', {
-          // credentials: 'include'
-        })
-        .then(function(resp) {
-          return resp.json()
-        })
-        .then(function(data) {
-          // TODO: move these requests to backend once available
-          // console.log(data)
-          // sort the icons to give three priorities
-          // 1. maskable
-          // 2. in the sweet spot (>=64px && <=192px) (too large or too small is bad)
-          // 3. size (larger is better)
-          data.icons.sort((a, b) => {
-            if(a.purpose == 'maskable' && b.purpose != 'maskable') return -1
-            if(b.purpose == 'maskable' && a.purpose != 'maskable') return 1
+      getManifest(props.src)
+      .then(manifest => {
+        setState((prevState) => ({
+          ...prevState,
+          title: (manifest.name.length > 15?manifest.short_name:manifest.name),
+          iconURL: (manifest.icons[0]?(props.src+(manifest.icons[0].src.match(/^\//)?'':'/')+manifest.icons[0].src):prevState.iconURL),
+        }))
+      })
+      .catch(function(reason) {
+        console.log(reason)
+      })
+      
+      // fetch(props.src+'manifest.json', {
+      //     // fetch('/api/v1/pwa/<id>/manifest', {
+      //     // credentials: 'include'
+      //   })
+      //   .then(function(resp) {
+      //     return resp.json()
+      //   })
+      //   .then(function(data) {
+      //     // TODO: move these requests to backend once available
+      //     // console.log(data)
+      //     // sort the icons to give three priorities
+      //     // 1. maskable
+      //     // 2. in the sweet spot (>=64px && <=192px) (too large or too small is bad)
+      //     // 3. size (larger is better)
+      //     data.icons.sort((a, b) => {
+      //       if(a.purpose == 'maskable' && b.purpose != 'maskable') return -1
+      //       if(b.purpose == 'maskable' && a.purpose != 'maskable') return 1
 
-            let aSize = parseInt(a.sizes.split('x')[0]);
-            let bSize = parseInt(b.sizes.split('x')[0]);
-            if(aSize > bSize) return -1
-            if(bSize > aSize) return 1
-            return 0
-          })
+      //       let aSize = parseInt(a.sizes.split('x')[0]);
+      //       let bSize = parseInt(b.sizes.split('x')[0]);
+      //       if(aSize > bSize) return -1
+      //       if(bSize > aSize) return 1
+      //       return 0
+      //     })
 
-          // console.log(data.icons)
-          setState((prevState) => ({
-            ...prevState,
-            title: (data.name.length > 15?data.short_name:data.name),
-            iconURL: (data.icons[0]?(props.src+data.icons[0].src):prevState.iconURL),
-          }))
-        })
-        .catch(function(reason) {
-          console.log(reason)
-        })
+      //     // console.log(data.icons)
+      //     setState((prevState) => ({
+      //       ...prevState,
+      //       title: (data.name.length > 15?data.short_name:data.name),
+      //       iconURL: (data.icons[0]?(props.src+data.icons[0].src):prevState.iconURL),
+      //     }))
+      //   })
+      //   .catch(function(reason) {
+      //     console.log(reason)
+      //   })
     }
   }, [props.src])
 

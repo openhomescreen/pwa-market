@@ -1,5 +1,24 @@
-# cloned from [preact-starter](https://github.com/gnomical/preact-starter)
+# Open Homescreen
+An open source, cross platform, launching pad for your favorite progressive web applications (PWA).
 
+### What is a PWA?
+A PWA, or progressive web application, is at its foundation nothing more than a website. With the evolution of the internet we have seen the capabilities of websites reach new heights. These new heights have enabled developers to choose between manifesting their idea in the form of a desktop application, mobile 'app', or now more commonly, a website. When these websites are created with a deep attention to detail and take into consideration the best practices for user experience on multiple devices, connection speeds, internet restrictions, and so on - that website is then considered a progressive web application. At this level, given the proper environment, websites can become nearly indistinguishable from the native applications we have come to rely on since the advent of mobile devices.
+
+### Why would I use this instead of a traditional app store?
+- Privacy 
+    - None of the installs or user preferences/actions are stored on ANYTHING except the devices you choose
+- Freedom
+    - The public can decide what is and isn't available in the ecosystem
+- Portability
+    - Available on all your devices
+- Transparency
+    - Open Source means every decision and feature is documented publicly
+- Security
+    - Since web browsers are the most used heavily used applications on modern devices, they are also heavily updated. Significant engineering resources are dedicated to 'sandboxing' web browsers to keep them from interfering with higher level system processes. This makes the code running inside a PWA encapsulated to a degree that cannot be matched by other forms of applications, and therefor, makes them more secure by nature.
+
+---
+## Technical Details
+## cloned from [preact-starter](https://github.com/gnomical/preact-starter)
 ### Preact 10 + FontAwesome + SCSS
 Slightly modified Preact CLI initialized default template.
 

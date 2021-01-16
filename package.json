@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "pwastore",
+  "name": "openhomescreen",
   "version": "0.1.0",
   "scripts": {
     "build": "preact build",

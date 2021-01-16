@@ -1,0 +1,38 @@
+.appStub {
+  margin: .5em;
+  padding: .5em;
+  width: calc(100% - 1em);
+  border-top: 1px dotted rgba(255,255,255,0.2);
+  background: rgba(127,127,127,0.1);
+  border-radius: .5em;
+  backdrop-filter: blur(10px);
+  height: 3.2em;
+  .btn {
+    float: right;
+    margin: .425em;
+    padding: 0.25em 1em;
+    color: #1e78ff;
+    border: 1px solid #1e78ff;
+    border-radius: .25em;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: .8em;
+  }
+  .slogan {
+    opacity: 0.5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .icon {
+    width: 2.2em;
+    height: 2.2em;
+    border-radius: .25em;
+    overflow: hidden;
+    float:left;
+    margin-right: .5em;
+    img {
+      width: 100%;
+    }
+  }
+}
