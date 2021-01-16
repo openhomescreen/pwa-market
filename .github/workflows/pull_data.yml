@@ -4,13 +4,15 @@ on:
   pull_request:
     paths:
       - "data/apps.json"
+      - "cmd/*.go"
   push:
     branches:
       - main
     paths:
       - "data/apps.json"
+      - "cmd/*.go"
   schedule:
-    - cron: 0 2 * * *
+    - cron: "0 2 * * *"
 
 jobs:
   data_pull:

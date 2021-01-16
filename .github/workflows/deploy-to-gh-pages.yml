@@ -2,9 +2,17 @@ name: Build and Deploy to Github Pages
 
 on:
   pull_request:
+    paths:
+      - "!data/*"
+      - "!data/**"
+      - "!cmd/*.go"
   push:
     branches:
       - main
+    paths:
+      - "!data/*"
+      - "!data/**"
+      - "!cmd/*.go"
 
 jobs:
   deploy_gh_pages:
