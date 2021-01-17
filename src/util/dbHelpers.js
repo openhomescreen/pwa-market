@@ -1,14 +1,17 @@
 import { update } from 'idb-keyval'
 
+// TODO: cache these results in indexdb
+
 export const getManifest = (src) => {
   return new Promise((resolve, reject) => {
     fetch('https://raw.githubusercontent.com/openhomescreen/pwa-market/main/data/manifests/'+encodeURIComponent(btoa(src))+'.json')
     .then(resp => {
       resp.json().then(data => {
-          // sort the icons to give three priorities
+          // sort the icons to give priority
           // 1. maskable
-          // 2. in the sweet spot (>=64px && <=192px) (too large or too small is bad)
-          // 3. size (larger is better)
+          // 2. size:
+          //   a. in the sweet spot (>=64px && <=192px) (not too small, not too large)
+          //   b. larger is better
           if(Object.prototype.toString.call(data.icons) == '[object Array]') {
             data.icons.sort((a, b) => {
               if((a.purpose && a.purpose == 'maskable') && (!b.purpose || b.purpose != 'maskable')) return -1
