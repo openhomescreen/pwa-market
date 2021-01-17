@@ -14,7 +14,7 @@ A PWA, or progressive web application, is at its foundation nothing more than a 
 - Transparency
     - Open Source means every decision and feature is documented publicly
 - Security
-    - Since web browsers are the most used heavily used applications on modern devices, they are also heavily updated. Significant engineering resources are dedicated to 'sandboxing' web browsers to keep them from interfering with higher level system processes. This makes the code running inside a PWA encapsulated to a degree that cannot be matched by other forms of applications, and therefor, makes them more secure by nature.
+    - Since web browsers are the most heavily used applications on modern devices, they are also heavily updated. Significant engineering resources are dedicated to 'sandboxing' web browsers to keep them from interfering with higher level system processes. This makes the code running inside a PWA encapsulated to a degree that cannot be matched by other forms of applications, and therefor, makes them more secure by nature.
 
 ---
 ## Technical Details
