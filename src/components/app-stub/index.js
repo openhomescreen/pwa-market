@@ -10,21 +10,15 @@ const AppStub = (props) => {
 
   useEffect(() => {
     if(stub.url) {
-      console.log(stub.url)
       getManifest(stub.url)
       .then(manifest => {
-        console.log(stub.url, manifest)
         updateStub(prevStub => ({
           ...manifest,
           url: prevStub.url,
           title: (manifest.name.length?manifest.name:manifest.short_name),
           iconURL: (manifest.icons[0]?(prevStub.url+(manifest.icons[0].src.match(/^\//)?'':'/')+manifest.icons[0].src):prevStub.iconURL),
+          saved: prevStub.saved,
         }))
-        // setState((prevState) => ({
-        //   ...prevState,
-        //   title: (data.name.length > 15?data.short_name:data.name),
-        //   iconURL: (data.icons[0]?(props.src+data.icons[0].src):prevState.iconURL),
-        // }))
       })
     }
   }, [stub.url])
@@ -50,14 +44,28 @@ const AppStub = (props) => {
   //     .catch(err => console.log(err))
   // }
 
+  const togglePossession = (e) => {
+    updateStub(prevStub => {
+      if(!prevStub.saved) {
+        props.updateInstalledApps('save', stub)
+      } else {
+        props.updateInstalledApps('remove', stub)
+      }
+      return {
+        ...prevStub,
+        saved: !prevStub.saved,
+      }
+    })
+  }
+
 	return (
     <div class={style.appStub}>
-      <div class={style.btn}>Save</div>
+      <div class={style.btn+(stub.saved?' '+style.saved:'')} onClick={togglePossession}>{stub.saved?'lose':'save'}</div>
       <div class={style.icon}>
         {stub.iconURL && <img src={stub.iconURL}/>}
       </div>
       <div class={style.title}>{stub.title}</div>
-      <div class={style.slogan}>{stub.description?stub.description:'Lorem Ipsum Dolar Sit'}</div>
+      <div class={style.slogan}>{stub.description?stub.description:''}</div>
     </div>
 	)
 }

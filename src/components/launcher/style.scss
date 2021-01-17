@@ -13,7 +13,7 @@
   }
   > .geometry {
     // color: #555;
-    border-radius: 1em;
+    border-radius: .75em;
     background-color: rgba(137,137,137,0.21);
     backdrop-filter: blur(5px);
     width: 70%;
@@ -48,7 +48,7 @@
       transform: translate(-50%, -50%);
       pointer-events: none;
       width: 70%;
-      border-radius:0.25em;
+      border-radius:0.75em;
     }
     > iframe {
       pointer-events: none;

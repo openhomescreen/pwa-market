@@ -18,33 +18,13 @@ const AppLibrary = (props) => {
     })
   }, [])
 
-  // const previewWallpaper = (e) => {
-  //   e.stopPropagation()
-	// 	var file = e.target.files;
-	// 	if (file.length > 0) {
-	// 		var fileReader = new FileReader()
-	// 		fileReader.onload = (event) => {
-  //       props.saveWallpaper(event.target.result)
-  //         .then(() => alert('Wallpaper Updated'))
-  //         .catch(err => console.log(err))
-	// 		}
-	// 		fileReader.readAsDataURL(file[0])
-  //   } 
-  // }
-
-  // const clearWallpaper = (e) => {
-  //   e.stopPropagation()
-  //   props.saveWallpaper(undefined)
-  //     .then(() => alert('Wallpaper Removed'))
-  //     .catch(err => console.log(err))
-  // }
-
 	return (
 		<div class={style.appLibrary}>
 			<h1>App Library</h1>
-      {apps.length && apps.map(app => (
-        <AppStub initialState={app}/>
-      ))}
+      {apps.length && apps.map(app => {
+        app.saved = props.installedApps.includes(btoa(app.url))
+        return <AppStub updateInstalledApps={props.updateInstalledApps} initialState={app}/>
+      })}
 		</div>
 	)
 }
