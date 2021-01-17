@@ -4,11 +4,11 @@ html,body{height:100vh;width:100vw;padding:0;margin:0;background:#000;font-famil
 
 .ef9e{padding-top:env(safe-area-inset-top)}.ef9e ul{list-style-type:none;margin:0.5em 0;padding:0}.ef9e ul li{font-size:1.2em;background:#1c1c1c;border-bottom:1px solid #333;padding:0.35em 4vw;cursor:pointer}.ef9e ul li:hover:not(.bc6e),.ef9e ul li:active:not(.bc6e){background:#333}.ef9e ul li>span{background:#09f;margin-right:.5em;height:1.25em;width:1.25em;border-radius:.25em;-ms-transform:translateY(0.1em);transform:translateY(0.1em)}.ef9e ul li>.eadf{max-height:0;transition:max-height 250ms ease-in-out;overflow:hidden}.ef9e ul li>.eadf ul{margin-bottom:0}.ef9e ul li>.eadf ul li{font-size:0.9em;border-top:1px solid #333;border-bottom:0;border-radius:0.25em}.ef9e ul li>.eadf ul li>label{cursor:pointer}.ef9e ul li>.eadf ul li>input{display:none}.ef9e ul li.bc6e>.eadf{max-height:4em}
 
-._00a4{height:100vh;overflow-y:scroll}
+._00a4{padding:env(safe-area-inset-top) 0 2em;height:100vh;overflow-y:scroll}
 
 ._1e59{margin:.5em;padding:.5em;width:calc(100% - 1em);border-top:1px dotted rgba(255,255,255,0.2);background:rgba(127,127,127,0.1);border-radius:.5em;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);height:3.2em}._1e59 ._0d0c{float:right;margin:.425em;padding:0.25em 1em;color:#1e78ff;border:1px solid #1e78ff;border-radius:.25em;cursor:pointer;text-transform:uppercase;font-size:.8em}._1e59 ._0d0c._88cc{color:#00df00;border-color:#00df00}._1e59 ._52ef{opacity:0.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}._1e59 .a01a{width:2.2em;height:2.2em;border-radius:.25em;overflow:hidden;float:left;margin-right:.5em}._1e59 .a01a img{width:100%}
 
 .d6c6{--bgurl: url('/assets/inky_splat.jpg');padding-top:env(safe-area-inset-top);display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;background:var(--bgurl) center center/cover;height:100%;-ms-flex-align:start;align-items:flex-start;-ms-flex-line-pack:start;align-content:flex-start;-webkit-user-select:none;-ms-user-select:none;user-select:none}
 
 
-/*# sourceMappingURL=ssr-bundle.3609d.css.map*/
+/*# sourceMappingURL=ssr-bundle.3e4ba.css.map*/
