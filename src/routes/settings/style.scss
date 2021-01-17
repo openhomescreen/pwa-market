@@ -1,5 +1,5 @@
 .settings {
-  padding-top: env(safe-area-inset-top);
+  padding: env(safe-area-inset-top) env(safe-area-inset-left) 0;
   ul {
     list-style-type: none;
     margin: 0.5em 0;

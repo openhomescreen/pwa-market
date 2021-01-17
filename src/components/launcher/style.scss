@@ -1,4 +1,8 @@
 .launcher {
+  @media screen and (orientation: landscape) {
+    flex-basis: calc((100vw - (env(safe-area-inset-left) * 2)) / 8);
+    height: calc((100vw - (env(safe-area-inset-left) * 2)) / 8);
+  }
   flex-basis: 25vw;
   height: 25vw;
   // font-size: 5em;
