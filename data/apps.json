@@ -57,10 +57,6 @@
       "title": "React Music Player",
       "url": "https://playlist.iondrimbafilho.me"
     }, {
-      "categories": ["music"],
-      "title": "MusicKit",
-      "url": "https://musickit.jull.dev"
-    }, {
       "categories": ["reference","weather"],
       "title": "WeatherApp",
       "url": "https://murillo94.github.io/weather-pwa"
@@ -68,10 +64,6 @@
       "categories": ["reference","weather"],
       "title": "React Weather",
       "url": "https://weather.iondrimbafilho.me"
-    }, {
-      "categories": ["games"],
-      "title": "Klondike Solitaire",
-      "url": "https://freesolitaire.win"
     }, {
       "categories": ["games","math"],
       "title": "2048",
