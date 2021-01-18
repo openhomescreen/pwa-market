@@ -16,8 +16,35 @@ A PWA, or progressive web application, is at its foundation nothing more than a 
 - Security
     - Since web browsers are the most heavily used applications on modern devices, they are also heavily updated. Significant engineering resources are dedicated to 'sandboxing' web browsers to keep them from interfering with higher level system processes. This makes the code running inside a PWA encapsulated to a degree that cannot be matched by other forms of applications, and therefor, makes them more secure by nature.
 
+### How do I get my app on this platform?
+Easy! Just submit a pull request that adds a json object to `/data/apps.json`  
+The json should provide 3 properties about your app. For example:
+```json
+{
+    "categories": ["games"],
+    "title": "My Awesome Game",
+    "url": "https://myawesomegame.example.com"
+}
+```
+> Please, no trailing slashes in the url.
+
+#### To allow the app to work in our ecosystem:
+- Make sure your server does not add the X-Frame-Options header when the referrer is `https://www.openhomescreen.com`
+- Make sure your server adds the following Content-Security-Policy header
+    ```
+    Content-Security-Policy: frame-ancestors 'self' https://www.openhomescreen.com;
+    ```
+    More Info:  
+    https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors  
+
+#### For the best experience:
+- make sure your pwa has a proper manifest.json file.  
+More Info:  
+https://developer.mozilla.org/en-US/docs/Web/Manifest
+
+
 ---
-## Technical Details
+## Technical Details for Contributors
 ## cloned from [preact-starter](https://github.com/gnomical/preact-starter)
 ### Preact 10 + FontAwesome + SCSS
 Slightly modified Preact CLI initialized default template.
@@ -53,4 +80,4 @@ npm run serve
 npm run test
 ```
 
-For detailed explanation on how things work, checkout the [CLI Readme](https://github.com/developit/preact-cli/blob/master/README.md).
+For detailed explanation on how things work, checkout the [Preact CLI Readme](https://github.com/developit/preact-cli/blob/master/README.md).
