@@ -1,57 +1,81 @@
 {
   "apps": [
     {
-      "icon": "male",
+      "categories": ["games","educational"],
       "title": "Hangapp",
       "url": "https://kylesureline.com/hangapp"
     }, {
-      "icon": "hotel",
+      "categories": ["games"],
       "title": "Tower Game",
       "url": "https://towergame.app"
     }, {
-      "icon": "gamepad",
+      "categories": ["games"],
       "title": "Doodle Cricket",
       "url": "https://doodlecricket.github.io"
     }, {
-      "icon": "th",
+      "categories": ["games"],
       "title": "Tic Tac Toe",
       "url": "https://tmaiadev-tictactoe.netlify.app"
     }, {
-      "icon": "dice-five",
+      "categories": ["games"],
       "title": "Dominoes",
       "url": "https://dominoes.playdrift.com"
     }, {
-      "icon": "ghost",
+      "categories": ["games"],
       "title": "Pacman",
       "url": "https://bobrov.dev/pacman-pwa"
     }, {
-      "icon": "stopwatch",
+      "categories": ["utilities"],
       "title": "Stopwatch",
       "url": "https://stopwatch-app.com"
     }, {
-      "icon": "wifi",
+      "categories": ["utilities","sharing"],
       "title": "Snapdrop",
       "url": "https://snapdrop.net"
     }, {
-      "icon": "['far', 'circle']",
+      "categories": ["games"],
       "title": "Circle Flip",
       "url": "https://the-circle.app"
     }, {
-      "icon": "",
+      "categories": ["games"],
       "title": "Dead or Alive",
       "url": "https://rick-and-morty-game.ahmetkapusuz.now.sh"
     }, {
-      "icon": "gamepad",
+      "categories": ["games"],
       "title": "Snake",
       "url": "https://tmaiadev-snake.netlify.app"
     }, {
-      "icon": "gamepad",
+      "categories": ["games"],
       "title": "Tetra",
       "url": "https://tmaiadev-tetra.netlify.app"
     }, {
-      "icon": "exchange-alt",
+      "categories": ["games"],
       "title": "Arrow Rain",
       "url": "https://arrows-rain.firebaseapp.com"
+    }, {
+      "categories": ["music"],
+      "title": "React Music Player",
+      "url": "https://playlist.iondrimbafilho.me"
+    }, {
+      "categories": ["music"],
+      "title": "MusicKit",
+      "url": "https://musickit.jull.dev"
+    }, {
+      "categories": ["reference","weather"],
+      "title": "WeatherApp",
+      "url": "https://murillo94.github.io/weather-pwa"
+    }, {
+      "categories": ["reference","weather"],
+      "title": "React Weather",
+      "url": "https://weather.iondrimbafilho.me"
+    }, {
+      "categories": ["games"],
+      "title": "Klondike Solitaire",
+      "url": "https://freesolitaire.win"
+    }, {
+      "categories": ["games","math"],
+      "title": "2048",
+      "url": "https://2048-opera-pwa.surge.sh"
     }
   ]
 }
