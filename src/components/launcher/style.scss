@@ -3,6 +3,18 @@
     flex-basis: calc((100vw - (env(safe-area-inset-left) * 2)) / 8);
     height: calc((100vw - (env(safe-area-inset-left) * 2)) / 8);
   }
+  @media screen and (min-width: 767px) {
+    flex-basis: 12vw;
+    height: 12vw;
+  }
+  @media screen and (min-width: 1111px) {
+    flex-basis: 11vw;
+    height: 11vw;
+  }
+  @media screen and (min-width: 1599px) {
+    flex-basis: 9vw;
+    height: 9vw;
+  }
   flex-basis: 25vw;
   height: 25vw;
   // font-size: 5em;
