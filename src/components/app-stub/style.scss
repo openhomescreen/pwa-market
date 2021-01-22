@@ -1,4 +1,12 @@
 .appStub {
+  @media screen and (min-width: 1024px) {
+    width: calc(50% - 0.5em);
+    display: inline-block;
+    clear: both;
+  }
+  @media screen and (min-width: 1600px) { // desktop
+    width: calc(33.3% - 0.34em);
+  }
   margin: .5em;
   padding: .5em;
   width: calc(100% - 1em);

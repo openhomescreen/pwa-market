@@ -2,4 +2,34 @@
   padding: env(safe-area-inset-top) env(safe-area-inset-left) 2em;
   height: 100vh;
   overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  &::before {
+    content: '';
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    height: env(safe-area-inset-top);
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(2px);
+    z-index: 2;
+  }
+  > h1 {
+    flex-basis: 100%;
+  }
+  > div {
+    @media screen and (min-width: 768px) {
+      flex-basis: calc(50% - 1em);
+      width: calc(50% - 1em);
+    }
+    @media screen and (min-width: 1024px) {
+      flex-basis: calc(33.3% - 1em);
+      width: calc(33.3% - 1em);
+    }
+      flex-basis: calc(100% - 1em);
+      width: calc(100% - 1em);
+  }
 }

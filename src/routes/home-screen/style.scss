@@ -1,12 +1,14 @@
 .homescreen {
-  @media screen and (min-width: 767px) {
-    padding: 2vw;
+  @media screen and (min-width: 768px) {
+    padding: 0.5vw 1vw;
+    font-size: 0.7em;
   }
-  @media screen and (min-width: 1111px) {
+  @media screen and (min-width: 1024px) {
     padding: 0.5vw;
   }
-  @media screen and (min-width: 1599px) {
-    padding: 2vw;
+  @media screen and (min-width: 1600px) {
+    padding: 1vw;
+    font-size: 0.65em;
   }
   --bgurl: url('/assets/inky_splat.jpg');
   padding: env(safe-area-inset-top) env(safe-area-inset-left) 0;
