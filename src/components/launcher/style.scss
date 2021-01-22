@@ -36,7 +36,7 @@
     height: 70%;
     margin: 15%;
     cursor: pointer;
-    &::before {
+    &:not(.system)::before {
       content: '';
       position: fixed;
       top:0;
@@ -44,8 +44,6 @@
       right:0;
       height: env(safe-area-inset-top);
       background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(2px);
-      z-index: 2;
       opacity: 0;
       transition: opacity 200ms ease-in-out;
     }
