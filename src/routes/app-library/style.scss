@@ -6,17 +6,6 @@
   flex-wrap: wrap;
   align-items: flex-start;
   align-content: flex-start;
-  &::before {
-    content: '';
-    position: fixed;
-    top:0;
-    left:0;
-    right:0;
-    height: env(safe-area-inset-top);
-    background: rgba(0,0,0,0.5);
-    backdrop-filter: blur(2px);
-    z-index: 2;
-  }
   > h1 {
     flex-basis: 100%;
   }
