@@ -28,7 +28,7 @@ jobs:
         run: make build
 
       - name: deploy to github pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v3.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
